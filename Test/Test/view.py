@@ -423,6 +423,38 @@ def sf645(request):
 		seat_list[num].append(x)
 		seat_list[num].append(y+(i*10))
 		num += 1
+
+
+	# 導師桌
+	num = 70
+	seat_list[num].append(num)
+	seat_list[num].append('導師桌')
+	seat_list[num].append(2)
+	seat_list[num].append(2)
+
+	# 空桌
+	num = 71
+	seat_list[num].append(num)
+	seat_list[num].append('空桌')
+	seat_list[num].append(32)
+	seat_list[num].append(2)
+
+	# 空桌
+	num = 72
+	seat_list[num].append(num)
+	seat_list[num].append('柱子')
+	seat_list[num].append(32)
+	seat_list[num].append(133)
+
+	# door
+	num = 73
+	seat_list[num].append(num)
+	seat_list[num].append('門')
+	seat_list[num].append(x)
+	seat_list[num].append(138)
+
+
+
 # sf645 end......................................................................
 # ------------劃座位結束---------------------------------------------------------------
 	# square 
@@ -446,16 +478,53 @@ def sf645(request):
 
 		if square.__contains__(i):
 			# html start
-			ID = 'no' + str(i)
-			html += '<div class= "square" id = ' + ID + '>'
-			
-			html += '<span>' + str(square[i][0][1]) + '</span>' 
-			html += '<p>' + str(406261999) + '<br>' + '小可愛</p>'
-			html += '</div>'
-			
+			# 導師桌
+			if i == 70:
+				ID = 'no' + str(i)
+				html+= '<div id = '+ ID +'>'
+				html += '<span>' + 	str(square[i][0][1]) + '</span>' 
+				html += '</div>'
 
-			# css start
-			css += '#'+ ID + '{ margin:0; margin-top:' + str(square[i][0][2]) + 'vh; margin-left:' + str(square[i][0][3]) + 'vh;}'
+				css += '#'+ ID + '{ margin:0; margin-top:' + str(square[i][0][2]) + 'vh; margin-left:' + str(square[i][0][3]) + 'vh; position:absolute;text-align: center;width: 20vh;height: 10vh; border: 1px;border-style: solid;}'
+			# 空桌
+			elif i == 71:
+				ID = 'no' + str(i)
+				html+= '<div id = '+ ID +'>'
+				html += '<span>' + 	str(square[i][0][1]) + '</span>' 
+				html += '</div>'
+				
+				css += '#'+ ID + '{ margin:0; margin-top:' + str(square[i][0][2]) + 'vh; margin-left:' + str(square[i][0][3]) + 'vh; position:absolute;text-align: center;width: 10vh;height: 10vh; border: 1px;border-style: solid;}'
+			
+			# 柱子
+			elif i == 72:
+				ID = 'no' + str(i)
+				html+= '<div id = '+ ID +'>'
+				html += '<span>' + 	str(square[i][0][1]) + '</span>' 
+				html += '</div>'
+
+				css += '#'+ ID + '{ margin:0; margin-top:' + str(square[i][0][2]) + 'vh; margin-left:' + str(square[i][0][3]) + 'vh; position:absolute;text-align: center;width: 10vh;height: 10vh; border: 1px;border-style: solid;}'
+			# door
+			elif i == 73:
+				ID = 'no' + str(i)
+				html+= '<div id = '+ ID +'>'
+				html += '<span>' + 	str(square[i][0][1]) + '</span>' 
+				html += '</div>'
+
+				css += '#'+ ID + '{ margin:0; margin-top:' + str(square[i][0][2]) + 'vh; margin-left:' + str(square[i][0][3]) + 'vh; position:absolute;text-align: center;width: 5vh;height: 10vh; border: 1px;border-style: solid;}'
+
+
+			else:
+				ID = 'no' + str(i)
+				html += '<div class= "square" id = ' + ID + '>'
+				
+				html += '<span>' + str(square[i][0][1]) + '</span>' 
+				html += '<p>' + str(406261999) + '<br>' + '小可愛</p>'
+				html += '</div>'
+				
+				# css start
+				css += '#'+ ID + '{ margin:0; margin-top:' + str(square[i][0][2]) + 'vh; margin-left:' + str(square[i][0][3]) + 'vh;}'
+
+			
 
 	# css end
 	html +=  '</html>'
@@ -495,6 +564,40 @@ def sf648(request):
 				num -= 1
 
 		y += 30
+
+	# door
+	num = 50
+	seat_list[num].append(num)
+	seat_list[num].append('門')
+	seat_list[num].append(87)
+	seat_list[num].append(90)
+
+	# 導師桌
+	num = 51
+	seat_list[num].append(num)
+	seat_list[num].append('導師桌')
+	seat_list[num].append(82)
+	seat_list[num].append(2)
+
+	#空桌1
+	num = 52
+	seat_list[num].append(num)
+	seat_list[num].append('空桌1')
+	seat_list[num].append(82)
+	seat_list[num].append(32)
+
+	#空桌2
+	num = 53
+	seat_list[num].append(num)
+	seat_list[num].append('空桌2')
+	seat_list[num].append(82)
+	seat_list[num].append(62)
+
+
+	
+
+
+
 # sf648 end......................................................................
 # ------------劃座位結束---------------------------------------------------------------
 	# square 
@@ -518,16 +621,51 @@ def sf648(request):
 
 		if square.__contains__(i):
 			# html start
-			ID = 'no' + str(i)
-			html += '<div class= "square" id = ' + ID + '>'
-			
-			html += '<span>' + str(square[i][0][1]) + '</span>' 
-			html += '<p>' + str(406261999) + '<br>' + '小可愛</p>'
-			html += '</div>'
-			
+			# door
+			if i == 50:
+				ID = 'no' + str(i)
+				html+= '<div id = '+ ID +'>'
+				html += '<span>' + 	str(square[i][0][1]) + '</span>' 
+				html += '</div>'
+				
+				css += '#'+ ID + '{ margin:0; margin-top:' + str(square[i][0][2]) + 'vh; margin-left:' + str(square[i][0][3]) + 'vh; position:absolute;text-align: center;width: 5vh;height: 10vh; border: 1px;border-style: solid;}'
 
-			# css start
-			css += '#'+ ID + '{ margin:0; margin-top:' + str(square[i][0][2]) + 'vh; margin-left:' + str(square[i][0][3]) + 'vh;}'
+			elif i == 51 :
+				ID = 'no' + str(i)
+				html+= '<div id = '+ ID +'>'
+				html += '<span>' + 	str(square[i][0][1]) + '</span>' 
+				html += '</div>'
+				
+				css += '#'+ ID + '{ margin:0; margin-top:' + str(square[i][0][2]) + 'vh; margin-left:' + str(square[i][0][3]) + 'vh; position:absolute;text-align: center;width: 20vh;height: 10vh; border: 1px;border-style: solid;}'
+
+			elif i == 52 :
+				ID = 'no' + str(i)
+				html+= '<div id = '+ ID +'>'
+				html += '<span>' + 	str(square[i][0][1]) + '</span>' 
+				html += '</div>'
+				
+				css += '#'+ ID + '{ margin:0; margin-top:' + str(square[i][0][2]) + 'vh; margin-left:' + str(square[i][0][3]) + 'vh; position:absolute;text-align: center;width: 20vh;height: 10vh; border: 1px;border-style: solid;}'
+
+			elif i == 53 :
+				ID = 'no' + str(i)
+				html+= '<div id = '+ ID +'>'
+				html += '<span>' + 	str(square[i][0][1]) + '</span>' 
+				html += '</div>'
+				
+				css += '#'+ ID + '{ margin:0; margin-top:' + str(square[i][0][2]) + 'vh; margin-left:' + str(square[i][0][3]) + 'vh; position:absolute;text-align: center;width: 20vh;height: 10vh; border: 1px;border-style: solid;}'
+
+
+			else:
+				ID = 'no' + str(i)
+				html += '<div class= "square" id = ' + ID + '>'
+				
+				html += '<span>' + str(square[i][0][1]) + '</span>' 
+				html += '<p>' + str(406261999) + '<br>' + '小可愛</p>'
+				html += '</div>'
+				
+
+				# css start
+				css += '#'+ ID + '{ margin:0; margin-top:' + str(square[i][0][2]) + 'vh; margin-left:' + str(square[i][0][3]) + 'vh;}'
 
 	# css end
 	html +=  '</html>'
